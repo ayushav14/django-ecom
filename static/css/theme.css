@@ -1,0 +1,184 @@
+/* ========================================================
+   Theme Configuration: Light & Dark Modes
+   Custom Palette:
+   - Primary: #014BAA (Deep Royal Blue)
+   - Light Background: #F8F3F0 (Warm Linen)
+   ======================================================== */
+
+:root {
+  --primary-color: #014BAA;
+  --primary-hover: #01377d;
+  --primary-subtle: rgba(1, 75, 170, 0.1);
+  --accent-color: #f59e0b;
+  
+  /* Light Mode Defaults */
+  --bg-body: #F8F3F0;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --border-color: #E6DFDA;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(1, 75, 170, 0.08);
+  --navbar-bg: #FFFFFF;
+  --footer-bg: #111827;
+  --footer-text: #E5E7EB;
+}
+
+[data-bs-theme="dark"] {
+  --primary-color: #3B82F6;
+  --primary-hover: #60A5FA;
+  --primary-subtle: rgba(59, 130, 246, 0.15);
+  --accent-color: #FBBF24;
+  
+  /* Dark Mode Defaults */
+  --bg-body: #0B1120;
+  --bg-surface: #1E293B;
+  --bg-card: #1E293B;
+  --bg-input: #0F172A;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-color: #334155;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --navbar-bg: #1E293B;
+  --footer-bg: #070D18;
+  --footer-text: #CBD5E1;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  flex: 1;
+}
+
+/* Primary Color Utilities */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border: 1px solid var(--primary-color);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(1, 75, 170, 0.25);
+}
+
+.btn-outline-primary-custom {
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-primary-custom:hover {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-brand-custom {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--primary-color) !important;
+  letter-spacing: -0.5px;
+}
+
+/* Cards & Containers */
+.card-custom {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-main);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-custom:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Inputs & Form Controls */
+.form-control-custom, .form-select-custom {
+  background-color: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.form-control-custom:focus, .form-select-custom:focus {
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-subtle);
+  outline: none;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: var(--primary-subtle);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-color);
+  color: #FFFFFF;
+}
+
+/* Badges */
+.badge-custom {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer-custom {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid var(--border-color);
+}
